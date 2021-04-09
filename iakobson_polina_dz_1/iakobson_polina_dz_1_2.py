@@ -26,5 +26,3 @@ for num in odds_list:
         second_sum += num
 # 3.
 print(first_sum, ',', second_sum)
-
-r
