@@ -11,9 +11,12 @@ with open('users.csv', 'r', encoding='utf-8') as users:
         user = user.replace(',', ' ')
         users.seek(0)
         with open('hobby.csv', 'r', encoding='utf-8') as hobby:
+            users.seek(0)
             hobby.seek(0)
             for each_user, user_hobby in itertools.zip_longest(users, hobby):
                 dict[each_user] = user_hobby
+                if each_user == None:
+                    exit(1)
 with open('dict.json', 'w+', encoding='utf-8') as dictionary:
     json.dump(dict, dictionary)
 print(dict)
